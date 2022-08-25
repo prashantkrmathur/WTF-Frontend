@@ -44,22 +44,22 @@ const Content = () => {
   useEffect(() => {
     placeData.map((item) => {
       if (city === item.city) {
-         setAreas(item.addressComponent)
+        setAreas(item.addressComponent)
       }
     })
-  }, [placeData,city]);
+  }, [placeData, city]);
 
   return (
     <>
       <Card style={{ borderRadius: '0px', marginTop: '-2px' }} className="bg-dark text-white">
-        <Card.Body style={{ width:'90%', margin:'auto'}}>
+        <Card.Body style={{ width: '90%', margin: 'auto' }}>
           <InputGroup size='lg' className="mb-8 bg-dark text-white">
             <Form.Control className="bg-dark text-white" placeholder='Search gym name here...' aria-label="Large" />
           </InputGroup>
         </Card.Body>
       </Card>
       <div className="bg-dark text-white" style={{ display: 'flex', width: '100%', margin: 'auto', justifyContent: 'space-between' }}>
-        <Card className="bg-dark text-white" style={{ width: '30%',marginLeft:'15px' }}>
+        <Card className="bg-dark text-white" style={{ width: '30%', marginLeft: '15px' }}>
           <Card.Body>
             <h1>Filters</h1>
             <Form.Group id='loaction' style={{ marginBottom: '15px' }}>
@@ -68,15 +68,15 @@ const Content = () => {
             </Form.Group>
             <Form.Group id='price' style={{ marginBottom: '15px' }}>
               <Form.Label>Price</Form.Label>
-              <div style={{ display: 'flex',justifyContent:'space-between' }}>
-                <Form.Control size='lg' style={{width:'40%'}} className="bg-dark text-white" value={minPrice} onChange={(event) => setMinPrice(event.target.value)} type='search' placeholder='Min' required></Form.Control>
+              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <Form.Control size='lg' style={{ width: '40%' }} className="bg-dark text-white" value={minPrice} onChange={(event) => setMinPrice(event.target.value)} type='search' placeholder='Min' required></Form.Control>
                 <Form.Control size='lg' style={{ width: '40%' }} className="bg-dark text-white" value={maxPrice} onChange={(event) => setMaxPrice(event.target.value)} type='search' placeholder='Max' required></Form.Control>
               </div>
             </Form.Group>
             <Form.Group id='cities' style={{ marginBottom: '15px' }}>
               <Form.Label>Cities</Form.Label>
-              <Form.Select size='lg' className="bg-dark text-white" value={city} placehoder='Select cty' onChange={(event)=> setCity(event.target.value)}>
-                <option value='0'>Select City</option>               
+              <Form.Select size='lg' className="bg-dark text-white" value={city} placehoder='Select cty' onChange={(event) => setCity(event.target.value)}>
+                <option value='0'>Select City</option>
                 <option value='New Delhi'>New Delhi</option>
                 <option value="Ghaziabad">Ghaziabad</option>
                 <option value="Noida">Noida</option>
@@ -95,17 +95,20 @@ const Content = () => {
         </Card>
         <Card className="bg-dark text-white" style={{ width: '65%' }}>
           <Card.Body>
-            <div style={{height:'500px',overflow:'auto'}}>
+            <div style={{ height: '500px', overflow: 'auto' }}>
               {gymData.map((item, id) => {
-                return <GymCard key={id} name={item.gym_name} distance={item.distance_text} rating={item.rating} time={item.duration_text} address1={item.address1} address2={item.address2} image={item.cover_image ? item.cover_image :''} />
-            })}
+                return <GymCard key={id} name={item.gym_name} distance={item.distance_text} rating={item.rating} time={item.duration_text} address1={item.address1} address2={item.address2} image={item.cover_image ? item.cover_image : ''} />
+              })}
             </div>
           </Card.Body>
         </Card>
-        {show && <PopUpModal show={show} setShow={setShow} /> }
+        {show && <PopUpModal show={show} setShow={setShow} />}
       </div>
-      <img style={{ overflow: 'hidden' }} src={mid}></img>
-      <img style={{ overflow: 'hidden' }} src={footer}></img>
+      <div style={{ overflow: 'hidden' }}>
+        <img src={mid}></img>
+        <img src={footer}></img>
+      </div>
+
     </>
   )
 }
