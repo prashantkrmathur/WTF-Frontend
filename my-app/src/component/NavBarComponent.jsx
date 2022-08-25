@@ -16,11 +16,11 @@ function NavBarComponent() {
                     <Nav>
                         <Nav.Link href="#home" style={{marginRight:'20px'}}>Fitness</Nav.Link>
                         <Nav.Link href="#features" style={{ marginRight: '20px' }}>Nutrition</Nav.Link>
-                        <Nav.Link href="#pricing" style={{ marginRight: '20px' }}>Gyms</Nav.Link>
+                        <Nav.Link href="/gym" style={{ marginRight: '20px' }}>Gyms</Nav.Link>
                         <Nav.Link href="#home" style={{ marginRight: '20px' }}>Become WTF Partner</Nav.Link>
                         <Nav.Link href="#features" style={{ marginRight: '20px' }}>About us</Nav.Link>
                         <Stack direction="horizontal" gap={2}>
-                            <Button as="a" variant="primary">
+                            <Button as="a" variant="danger">
                                Login
                             </Button>
                         </Stack>
