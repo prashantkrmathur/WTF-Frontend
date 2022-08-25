@@ -1,3 +1,4 @@
+import React from "react"
 import { Button, Stack } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -27,7 +28,7 @@ function NavBarComponent() {
                     </Nav>
                 </Container>
             </Navbar>
-            <div><img src={img}></img></div>
+            <div style={{ overflow: 'hidden' }}><img src={img}></img></div>
         </>
     );
 }

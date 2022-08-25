@@ -104,8 +104,8 @@ const Content = () => {
         </Card>
         {show && <PopUpModal show={show} setShow={setShow} /> }
       </div>
-      <img src={mid}></img>
-      <img src={footer}></img>
+      <img style={{ overflow: 'hidden' }} src={mid}></img>
+      <img style={{ overflow: 'hidden' }} src={footer}></img>
     </>
   )
 }
